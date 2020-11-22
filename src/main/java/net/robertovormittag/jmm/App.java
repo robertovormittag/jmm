@@ -1,7 +1,10 @@
 package net.robertovormittag.jmm;
 
 import java.util.List;
+import java.util.UUID;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Logger;
 
 /**  
@@ -15,28 +18,27 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		// allObjectsAssignedToOneReferenceTest();
-		oneReferenceForEachObjectTest();
+		// oneReferenceTest();
+		// fullReferenceTest();
 	}
 		
 	
 	/** HEAP *******************************
-	 			Alpha
-	 			Alpha
-	 			Alpha
-	 			Alpha
-	 			Alpha
-	 	aref =>	Alpha
+	 			@Alpha
+	 			@Alpha
+	 			@Alpha
+	 			@Alpha
+	 			@Alpha
+	 	aref =>	@Alpha
 	 			...
 	 ***************************************/
 	@SuppressWarnings("unused")
-	private static void allObjectsAssignedToOneReferenceTest() {
+	private static void oneReferenceTest() {
 
-		// one single reference for all Alpha objects
 		Alpha aref;
 
 		while (true) {
-			
+			// one reference for all Alpha objects			
 			aref = new Alpha();
 			log.info(aref.toString());
 		}
@@ -44,16 +46,16 @@ public class App {
 
 	
 	/** HEAP *******************************
-		arr[0] =>	Alpha
-		arr[1] =>	Alpha
-		arr[2] =>	Alpha
-		arr[3] =>	Alpha
-		arr[4] =>	Alpha
-		arr[5] =>	Alpha
+		arr[0] => @Alpha
+		arr[1] => @Alpha
+		arr[2] => @Alpha
+		arr[3] => @Alpha
+		arr[4] => @Alpha
+		arr[5] => @Alpha
 				...
 	 ***************************************/
 	@SuppressWarnings("unused")
-	private static void oneReferenceForEachObjectTest() {
+	private static void fullReferenceTest() {
 		
 		List<Alpha> alist = new ArrayList<Alpha>();
 
@@ -64,6 +66,5 @@ public class App {
 		}
 		
 	}
-	
-		
+			
 }
