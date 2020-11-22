@@ -24,11 +24,11 @@ public class App {
 		
 	
 	/** HEAP *******************************
-	 			@Alpha
-	 			@Alpha
-	 			@Alpha
-	 			@Alpha
-	 			@Alpha
+	         @Alpha
+	 	        @Alpha
+	 	        @Alpha
+	 	        @Alpha
+	 	        @Alpha
 	 	aref =>	@Alpha
 	 			...
 	 ***************************************/
@@ -38,7 +38,7 @@ public class App {
 		Alpha aref;
 
 		while (true) {
-			// one reference for all Alpha objects			
+			// one reference for Alpha objects			
 			aref = new Alpha();
 			log.info(aref.toString());
 		}
@@ -60,7 +60,7 @@ public class App {
 		List<Alpha> alist = new ArrayList<Alpha>();
 
 		while (true) {
-			// every Alpha object has a valid reference reference
+			// every Alpha object has a valid reference
 			alist.add(new Alpha());
 			log.info("List size = " + alist.size());
 		}
